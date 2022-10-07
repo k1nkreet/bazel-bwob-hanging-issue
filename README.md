@@ -1,9 +1,9 @@
 This repo demonstrates the issue appeared in Bazel 5.3
 
-Before that Bazel was raising FileNotFoundException in case of outputs evicted from CAS
-in remote exectuted build without bytes (https://github.com/bazelbuild/bazel/issues/8250)
+Before that Bazel was raising `FileNotFoundException` in case of outputs evicted from CAS
+in remote exectuted build without bytes https://github.com/bazelbuild/bazel/issues/8250
 
-Starting from 5.3 instead of failing with FileNotFoundException Bazel just hangs infinitely.
+Starting from 5.3 instead of failing with `FileNotFoundException` Bazel just hangs infinitely.
 
 # Requirements
 
