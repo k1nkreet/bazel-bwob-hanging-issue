@@ -1,0 +1,24 @@
+genrule(
+    name = "a",
+    srcs = ["a.in"],
+    outs = ["a.out"],
+    cmd = "cat $(SRCS) > $@",
+)
+
+genrule(
+    name = "b",
+    srcs = ["a.out", "b.in"],
+    outs = ["b.out"],
+    cmd = "cat $(SRCS) > $@",
+)
+
+platform(
+    name = "remote_platform",
+    constraint_values = [
+        "@bazel_tools//platforms:linux",
+        "@bazel_tools//platforms:x86_64",
+    ],
+    exec_properties = {
+        "container-image": "docker://containers.global.prod.stripe.io/stripe/pay-server/jenkins@sha256:d02656c5e172575e7be9dc102b836f909713f62c64b9b2b46f831b7765d7b194",
+    },
+)

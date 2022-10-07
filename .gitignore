@@ -1,0 +1,3 @@
+bazel-*
+buildbarn/storage-*
+buildbarn/worker-*
